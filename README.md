@@ -5,7 +5,7 @@ In my last academic project, I built a **secure CI/CD pipeline using Jenkins** f
 ## Project Architecture 📐  
 *(Thumbnail of the architecture diagram will be added here)*  
 
-![Architecture Diagram](images/Screenshot_2025-04-16_011223.png)  
+![Architecture Diagram](images/Screenshot 2025-04-16 011223.png)  
 
 ---
 
