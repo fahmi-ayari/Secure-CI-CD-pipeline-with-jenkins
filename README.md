@@ -113,7 +113,7 @@ we need to configure the credentials settings also :
 
 then,configure the system and tools parametres.
 
-for the **pipeline** you can find it attached above.
+for the **pipeline** you can find it attached above with the docker file and the deployement-file.
 
 finaly, building the pipeline as you can see it's successfully builded !!
 ![Architecture Diagram](images/Screenshot%202025-04-15%20204955.png)
