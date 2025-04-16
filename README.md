@@ -51,8 +51,9 @@ sudo apt-get install jenkins -y
 # Start Jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins (this will start Jenkins anytime we run the virtual machine)
+```
+### Install Docker  
 
-Install docker now
 ```bash
 #!/bin/bash
 
@@ -80,7 +81,7 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
-
+```
 ## SonarQube configuration
 ### step 3:install and set up SonarQube
 
@@ -89,6 +90,7 @@ we need to install docker, so copy the same shell code for jenkins section insid
 #### create a sonarqube container
 ```bash
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+```
 
 this will run a sonarqube container in port 9000
 
