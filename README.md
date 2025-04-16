@@ -5,7 +5,7 @@ In my last academic project, I built a **secure CI/CD pipeline using Jenkins** f
 ## Project Architecture 📐  
 *(Thumbnail of the architecture diagram will be added here)*  
 
-![Architecture Diagram](images/image.png)  
+![Architecture Diagram](images/Screenshot_2025-04-16_011223.png)  
 
 ---
 
@@ -16,10 +16,10 @@ To host the pipeline components, I launched **3 EC2 instances** on AWS:
 1. **Jenkins Server** (CI/CD orchestration)  
 2. **SonarQube Server** (Static code analysis)  
 3. **Monitoring Machine** (Logs/metrics)  
-
+![Architecture Diagram](images/image.png)  
 For Kubernetes, I used **Azure Kubernetes Service (AKS)**.  
 
-*(Screenshot of the AWS/Azure setup will be added here)*  
+![Architecture Diagram](images/Screenshot_2025-04-16_130900.png)   
 
 ---
 
