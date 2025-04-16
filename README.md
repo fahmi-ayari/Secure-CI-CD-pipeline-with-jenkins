@@ -26,14 +26,14 @@ For Kubernetes, I used **Azure Kubernetes Service (AKS)**.
 ## Jenkins Configuration  
 
 ### Step 2: Install & Set Up Jenkins  
-Run these shell commands on your Jenkins server (copy-friendly):  
+Run these shell commands on your Jenkins server :  
 
 ```bash
 # Update packages
 sudo apt-get update
 
-# Install Java (Jenkins dependency)
-sudo apt-get install openjdk-11-jdk -y
+# Install Java 17+ (Jenkins dependency)
+sudo apt install openjdk-17-jre-headless -y
 
 # Add Jenkins repository key
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
@@ -50,4 +50,72 @@ sudo apt-get install jenkins -y
 
 # Start Jenkins
 sudo systemctl start jenkins
-sudo systemctl enable jenkins
+sudo systemctl enable jenkins (this will start Jenkins anytime we run the virtual machine)
+
+Install docker now
+```bash
+#!/bin/bash
+
+# Update package manager repositories
+sudo apt-get update
+
+# Install necessary dependencies
+sudo apt-get install -y ca-certificates curl
+
+# Create directory for Docker GPG key
+sudo install -m 0755 -d /etc/apt/keyrings
+
+# Download Docker's GPG key
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
+# Ensure proper permissions for the key
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add Docker repository to Apt sources
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Update package manager repositories
+sudo apt-get update
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
+
+## SonarQube configuration
+### step 3:install and set up SonarQube
+
+we need to install docker, so copy the same shell code for jenkins section inside a file.sh and then run it (don't forget chmod +x file.sh)
+
+#### create a sonarqube container
+```bash
+docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+
+this will run a sonarqube container in port 9000
+
+### step 4:Create a kubernetes server
+you have your own choice if you choose a complete kuberntes service from aws or azure that already have every thing installed and ready or you can create your own kuberenetes server in EC2 VM, for me i've choosed the azure kuberenets service since i have a student account.
+
+### step 5: building the pipeline :
+we need to install some plugins befor we start building the pipeline
+at least we need to install those plugins:
+-Eclipse Temurin Installer
+-Pipeline Maven Integration
+-SonarQube Scanner
+-Kuberenetes CLI
+-Kuberentes
+-Docker
+-Docker Pipeline Step
+
+we need to configure the credentials settings also :
+![Architecture Diagram](images/Screenshot_16-4-2025_134921_3.225.12.86.jpeg)
+
+then,configure the system and tools parametres.
+
+for the ###**pipeline** you can find it attached above.
+
+finaly, building the pipeline as you can see it's successfully builded !!
+![Architecture Diagram](images/Screenshot%202025-04-15%20204955.png)
+
+
+
+
