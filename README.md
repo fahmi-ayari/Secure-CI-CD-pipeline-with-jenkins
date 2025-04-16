@@ -109,7 +109,7 @@ at least we need to install those plugins:
 -Docker Pipeline Step
 
 we need to configure the credentials settings also :
-![Architecture Diagram](images/Screenshot_16-4-2025_134921_3.225.12.86.jpeg)
+![Architecture Diagram](images/Screenshot%202025-04-16%20144952.png)
 
 then,configure the system and tools parametres.
 
@@ -117,6 +117,10 @@ for the ###**pipeline** you can find it attached above.
 
 finaly, building the pipeline as you can see it's successfully builded !!
 ![Architecture Diagram](images/Screenshot%202025-04-15%20204955.png)
+
+and this is the Public IP address provided by Kubernetes to access the webapp.
+![Architecture Diagram](images/Screenshot%202025-04-16%20144508.png)
+
 
 
 
