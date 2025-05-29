@@ -108,14 +108,22 @@ you have your own choice if you choose a complete kuberntes service from aws or 
 ## Jenkins Pipeline(groovy syntax)
 ### step 5: building the pipeline :
 we need to install some plugins befor we start building the pipeline
-at least we need to install those plugins:
--Eclipse Temurin Installer
--Pipeline Maven Integration
--SonarQube Scanner
--Kuberenetes CLI
--Kuberentes
--Docker
--Docker Pipeline Step
+at least we need to install those plugins:  
+
+-Eclipse Temurin Installer  
+
+-Pipeline Maven Integration  
+
+-SonarQube Scanner  
+
+-Kuberenetes CLI  
+
+-Kuberentes  
+
+-Docker  
+
+-Docker Pipeline Step  
+
 
 we need to configure the credentials settings also( used to link the multiple services together) :
 ![Architecture Diagram](images/Screenshot%202025-04-16%20144952.png)
@@ -137,11 +145,13 @@ these are the links that help me to Download and setup the environement :
 - Download Prometheus and Black-box eporter: https://prometheus.io/download/
 - Download Grafana: https://grafana.com/grafana/download
 - Help me in the yaml file configurations: https://github.com/prometheus/blackbox_exporter
+- 
 This is the result, Grafana dashboard indicates multiple information about the Webapp like if its up or down, HTTP status...
 ![Architecture Diagram](images/website%20monitoring.png)
 ### step 6 : System level monitoring :
 at this level we used Node exporter for metrics collection from Jenkins server.
--Download Node exporter:  https://prometheus.io/download/
+-Download Node exporter:  https://prometheus.io/download/  
+
 This is the results, multiplr stats about CPU usage, RAM usage...(we can configure what we want to monitor using jenkins settings).
 ![Architecture Diagram](images/Jenkins%20monitoring.png)
 ## Obtained Results
@@ -155,3 +165,7 @@ Libraries and Dependencies Report:
 ### RECAP 
 below an architucture diagram that explains how the multiple services in the infrastructure are linked and communicate: 
 ![Architecture Diagram](images/diagram.png)
+### Future Enhancement
+-publishing the multiple builded artifact version into Nexus reposetory befor build the docker image
+-implementing a SIEM technologies for runtime monitoring
+-showcase Trivy's reports using a dashboard instead of HTML based Table
