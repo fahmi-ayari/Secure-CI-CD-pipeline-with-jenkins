@@ -13,7 +13,7 @@ This repository documents the entire process—from infrastructure setup to depl
 ## Project Architecture 📐  
 *(Thumbnail of the architecture diagram will be added here)*  
 
-![Architecture Diagram](images/Screenshot%202025-04-16%20011223.png)  
+![Architecture Diagram](images/DevSecOps.png)  
 
 ---
 
