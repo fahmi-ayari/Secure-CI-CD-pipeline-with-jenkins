@@ -157,11 +157,15 @@ This is the results, multiplr stats about CPU usage, RAM usage...(we can configu
 ## Obtained Results
 ### Static Tests Results using SonarQube:
 ![Architecture Diagram](images/sonar%20results.png)
-### Trivy generates detailed vulnerability reports for both the Docker image and open-source dependencies, ensuring comprehensive security analysis across the deployment stack.
-Docker image report :
+### Trivy generates detailed vulnerability reports for both the Docker image and open-source dependencies, ensuring comprehensive security analysis across the deployment stack.  
+
+### Docker image report :  
+
 ![Architecture Diagram](images/image%20report.png)
-Libraries and Dependencies Report:
+### Libraries and Dependencies Report:  
+
 ![Architecture Diagram](images/lib%20report.png)
+
 ### RECAP 
 below an architucture diagram that explains how the multiple services in the infrastructure are linked and communicate: 
 ![Architecture Diagram](images/diagram.png)
