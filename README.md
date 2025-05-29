@@ -145,7 +145,7 @@ these are the links that help me to Download and setup the environement :
 - Download Prometheus and Black-box eporter: https://prometheus.io/download/
 - Download Grafana: https://grafana.com/grafana/download
 - Help me in the yaml file configurations: https://github.com/prometheus/blackbox_exporter
-- 
+  
 This is the result, Grafana dashboard indicates multiple information about the Webapp like if its up or down, HTTP status...
 ![Architecture Diagram](images/website%20monitoring.png)
 ### step 6 : System level monitoring :
