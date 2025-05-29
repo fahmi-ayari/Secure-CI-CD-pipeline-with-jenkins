@@ -17,7 +17,7 @@ To host the pipeline components, I launched **3 EC2 instances** on AWS:
 2. **SonarQube Server** (Static code analysis)  
 3. **Monitoring Machine** (Logs/metrics)  
 ![Architecture Diagram](images/image.png)  
-For Kubernetes, I used **Azure Kubernetes Service (AKS)**.  
+For Kubernetes, I used **Azure Kubernetes Service (AKS)** with one Master Node and Two Slaves, and loadbalancer service.  
 
 ![Architecture Diagram](images/Screenshot%202025-04-16%20130900.png)   
 
