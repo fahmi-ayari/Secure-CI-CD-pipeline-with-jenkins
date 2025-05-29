@@ -1,6 +1,14 @@
 # Secure CI/CD Pipeline with Jenkins for Java Web App 🚀  
 
-In my last academic project, I built a **secure CI/CD pipeline using Jenkins** for a Java-based web application. This repository documents every step of the process, from infrastructure setup to deployment. Hope you find it helpful!  
+In my last academic project, I designed and implemented a secure CI/CD pipeline using Jenkins for a Java-based web application. This pipeline streamlines the deployment process while integrating robust security testing at every stage. Key tools include:
+
+-SonarQube for static code quality analysis.
+
+-Trivy for Software Composition Analysis (SCA) to scan open-source libraries and dependencies.
+
+The pipeline generates detailed reports highlighting security findings, followed by a comprehensive monitoring phase at the application and system levels using Grafana and Prometheus.
+
+This repository documents the entire process—from infrastructure setup to deployment—providing a clear, step-by-step guide. I hope you find it insightful!
 
 ## Project Architecture 📐  
 *(Thumbnail of the architecture diagram will be added here)*  
@@ -94,9 +102,10 @@ docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 
 this will run a sonarqube container in port 9000
 
+## Kubernetes Configuration 
 ### step 4:Create a kubernetes server
 you have your own choice if you choose a complete kuberntes service from aws or azure that already have every thing installed and ready or you can create your own kuberenetes server in EC2 VM, for me i've choosed the azure kuberenets service since i have a student account.
-
+## Jenkins Pipeline(groovy syntax)
 ### step 5: building the pipeline :
 we need to install some plugins befor we start building the pipeline
 at least we need to install those plugins:
@@ -108,12 +117,12 @@ at least we need to install those plugins:
 -Docker
 -Docker Pipeline Step
 
-we need to configure the credentials settings also :
+we need to configure the credentials settings also( used to link the multiple services together) :
 ![Architecture Diagram](images/Screenshot%202025-04-16%20144952.png)
 
 then,configure the system and tools parametres.
 
-for the **pipeline** you can find it attached above with the docker file and the deployement-file.
+for the **Jenkins pipeline** you can find it attached above with the docker file and the deployement-file.
 
 finaly, building the pipeline as you can see it's successfully builded !!
 ![Architecture Diagram](images/Screenshot%202025-04-15%20204955.png)
@@ -121,7 +130,28 @@ finaly, building the pipeline as you can see it's successfully builded !!
 and this is the Public IP address provided by Kubernetes to access the webapp.
 ![Architecture Diagram](images/Screenshot%202025-04-16%20144508.png)
 
-
-
-
-
+## Monitoring phase
+### Step 5 : website level monitoring :
+at this level we'll monitor the website traffic and state using Black-box exporter to gather metrics, Prometheus to store and manage the metrics and Grafana to showcase the result using a user friendly dashboard.
+these are the links that help me to Download and setup the environement :
+- Download Prometheus and Black-box eporter: https://prometheus.io/download/
+- Download Grafana: https://grafana.com/grafana/download
+- Help me in the yaml file configurations: https://github.com/prometheus/blackbox_exporter
+This is the result, Grafana dashboard indicates multiple information about the Webapp like if its up or down, HTTP status...
+![Architecture Diagram](images/website%20monitoring.png)
+### step 6 : System level monitoring :
+at this level we used Node exporter for metrics collection from Jenkins server.
+-Download Node exporter:  https://prometheus.io/download/
+This is the results, multiplr stats about CPU usage, RAM usage...(we can configure what we want to monitor using jenkins settings).
+![Architecture Diagram](images/Jenkins%20monitoring.png)
+## Obtained Results
+### Static Tests Results using SonarQube:
+![Architecture Diagram](images/sonar%20results.png)
+### Trivy generates detailed vulnerability reports for both the Docker image and open-source dependencies, ensuring comprehensive security analysis across the deployment stack.
+Docker image report :
+![Architecture Diagram](images/image%20report.png)
+Libraries and Dependencies Report:
+![Architecture Diagram](images/lib%20report.png)
+### RECAP 
+below an architucture diagram that explains how the multiple services in the infrastructure are linked and communicate: 
+![Architecture Diagram](images/diagram.png)
