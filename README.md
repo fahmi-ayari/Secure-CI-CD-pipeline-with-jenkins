@@ -170,6 +170,6 @@ This is the results, multiplr stats about CPU usage, RAM usage...(we can configu
 below an architucture diagram that explains how the multiple services in the infrastructure are linked and communicate: 
 ![Architecture Diagram](images/diagram.png)
 ### Future Enhancement
--publishing the multiple builded artifact version into Nexus reposetory befor build the docker image
--implementing a SIEM technologies for runtime monitoring
+-publishing the multiple builded artifact version into Nexus reposetory befor build the docker image  
+-implementing a SIEM technologies for runtime monitoring  
 -showcase Trivy's reports using a dashboard instead of HTML based Table
