@@ -11,7 +11,7 @@ The pipeline generates detailed reports highlighting security findings, followed
 This repository documents the entire process—from infrastructure setup to deployment—providing a clear, step-by-step guide. I hope you find it insightful!
 
 ## Project Architecture 📐  
-*(Thumbnail of the architecture diagram will be added here)*  
+ 
 
 ![Architecture Diagram](images/DevSecOps.png)  
 
